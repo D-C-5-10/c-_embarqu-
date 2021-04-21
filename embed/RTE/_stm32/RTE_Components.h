@@ -3,8 +3,8 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'ledclass' 
- * Target:  'Target 1' 
+ * Project: 'uart' 
+ * Target:  'stm32' 
  */
 
 #ifndef RTE_COMPONENTS_H

@@ -30,13 +30,11 @@ class LED
 	{
 		*reinterpret_cast<volatile port_type *>(port) ^= (1U<<bval);
 	}
-	void pseudo_delay(int n )
+	void pseudo_delay(void)
 	{
-		int i =0;
-		for(;i<n;++i)
-		{
-			for(i=0;i<3200;++i){}
-		}
+
+			for(int i=0;i<190000;++i){}
+		
 	}
 	private :
 		const port_type port ;
@@ -61,7 +59,7 @@ int main ()
 			LD13.toggle();
 			LD14.toggle();
 			LD15.toggle();
-			LD12.pseudo_delay(1000);
+			LD12.pseudo_delay();
 			
 		}
 	
