@@ -2,10 +2,10 @@
 void uart_init(void)
 {
 	/*******Initialisation*******/
-  RCC->AHB1ENR  = 0x1; //enable GPIOA clk
-	RCC->APB1ENR = 0x20000; //enable USART2 clk
+  RCC->AHB1ENR  |= 0x1; //enable GPIOA clk
+	RCC->APB1ENR |= 0x20000; //enable USART2 clk
 	/*******configuration*******/
-	GPIOA->MODER = 0x00A0; // seting pin 2 and 3 to alternate mode
+	GPIOA->MODER |= 0x00A0; // seting pin 2 and 3 to alternate mode
 	GPIOA->AFR[0] |= 0x7700; //Alternate function for usart2 AF7 in AFRL
 	USART2->BRR = 0x0683;// 9600 Baud rate (default)
 	USART2->CR1 = 0x000C; // enable tx,Rx and 8 bit data 
